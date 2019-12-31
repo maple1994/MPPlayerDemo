@@ -27,6 +27,9 @@
 		A238FDBC23B60CCF00B91616 /* MPPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDB923B60CCF00B91616 /* MPPlayerController.m */; };
 		A238FDC123B60E7E00B91616 /* XSTPreLoaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDBD23B60E7D00B91616 /* XSTPreLoaderModel.m */; };
 		A238FDC223B60E7E00B91616 /* XSTPlayerAttributeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDC023B60E7E00B91616 /* XSTPlayerAttributeManager.m */; };
+		A238FDC523B631D500B91616 /* MPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDC423B631D500B91616 /* MPDetailViewController.m */; };
+		A238FDC823B632F500B91616 /* ZFDouYinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDC623B632F500B91616 /* ZFDouYinCell.m */; };
+		A238FDCB23B6333A00B91616 /* ZFDouYinControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDCA23B6333A00B91616 /* ZFDouYinControlView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,12 @@
 		A238FDBE23B60E7E00B91616 /* XSTPlayerAttributeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSTPlayerAttributeManager.h; sourceTree = "<group>"; };
 		A238FDBF23B60E7E00B91616 /* XSTPreLoaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSTPreLoaderModel.h; sourceTree = "<group>"; };
 		A238FDC023B60E7E00B91616 /* XSTPlayerAttributeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSTPlayerAttributeManager.m; sourceTree = "<group>"; };
+		A238FDC323B631D500B91616 /* MPDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPDetailViewController.h; sourceTree = "<group>"; };
+		A238FDC423B631D500B91616 /* MPDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPDetailViewController.m; sourceTree = "<group>"; };
+		A238FDC623B632F500B91616 /* ZFDouYinCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFDouYinCell.m; sourceTree = "<group>"; };
+		A238FDC723B632F500B91616 /* ZFDouYinCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDouYinCell.h; sourceTree = "<group>"; };
+		A238FDC923B6333A00B91616 /* ZFDouYinControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDouYinControlView.h; sourceTree = "<group>"; };
+		A238FDCA23B6333A00B91616 /* ZFDouYinControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFDouYinControlView.m; sourceTree = "<group>"; };
 		CF769E351532EF9AF663DD17 /* libPods-MPPlayerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MPPlayerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1D743BEE01F4282DB6B4B3 /* libPods-MPPlayerDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MPPlayerDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -207,6 +216,8 @@
 		A238FDA423B5E0C900B91616 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				A238FDC923B6333A00B91616 /* ZFDouYinControlView.h */,
+				A238FDCA23B6333A00B91616 /* ZFDouYinControlView.m */,
 				A238FDBE23B60E7E00B91616 /* XSTPlayerAttributeManager.h */,
 				A238FDC023B60E7E00B91616 /* XSTPlayerAttributeManager.m */,
 				A238FDBF23B60E7E00B91616 /* XSTPreLoaderModel.h */,
@@ -221,6 +232,8 @@
 		A238FDA523B5E39C00B91616 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A238FDC723B632F500B91616 /* ZFDouYinCell.h */,
+				A238FDC623B632F500B91616 /* ZFDouYinCell.m */,
 				A238FDA723B5E3EC00B91616 /* ZFTableViewCell.h */,
 				A238FDA823B5E3EC00B91616 /* ZFTableViewCell.m */,
 			);
@@ -232,6 +245,8 @@
 			children = (
 				A238FDB123B5F22000B91616 /* MPListViewController.h */,
 				A238FDB223B5F22000B91616 /* MPListViewController.m */,
+				A238FDC323B631D500B91616 /* MPDetailViewController.h */,
+				A238FDC423B631D500B91616 /* MPDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -485,8 +500,11 @@
 			files = (
 				A238FDC123B60E7E00B91616 /* XSTPreLoaderModel.m in Sources */,
 				A238FD6B23B5A30500B91616 /* ViewController.m in Sources */,
+				A238FDC523B631D500B91616 /* MPDetailViewController.m in Sources */,
 				A238FDB323B5F22000B91616 /* MPListViewController.m in Sources */,
+				A238FDC823B632F500B91616 /* ZFDouYinCell.m in Sources */,
 				A238FD6523B5A30500B91616 /* AppDelegate.m in Sources */,
+				A238FDCB23B6333A00B91616 /* ZFDouYinControlView.m in Sources */,
 				A238FDA923B5E3EC00B91616 /* ZFTableViewCell.m in Sources */,
 				A238FDAF23B5E40C00B91616 /* ZFTableViewCellLayout.m in Sources */,
 				A238FDB023B5E40C00B91616 /* NSString+Size.m in Sources */,

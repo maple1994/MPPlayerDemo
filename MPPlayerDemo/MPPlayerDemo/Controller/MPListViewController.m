@@ -11,6 +11,7 @@
 #import "ZFTableData.h"
 #import "MPPlayerController.h"
 #import <ZFPlayerControlView.h>
+#import "MPDetailViewController.h"
 
 static NSString *kIdentifier = @"kIdentifier";
 
@@ -133,6 +134,15 @@ static NSString *kIdentifier = @"kIdentifier";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZFTableViewCellLayout *layout = self.dataSource[indexPath.row];
     return layout.height;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MPDetailViewController *vc = [[MPDetailViewController alloc] init];
+    vc.player = self.player;
+    vc.index = indexPath.row;
+    vc.dataSource = [self.playableArray mutableCopy];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)zf_playTheVideoAtIndexPath:(NSIndexPath *)indexPath {

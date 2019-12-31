@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MPListViewController.h"
+#import "MPDetailViewController.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -45,8 +46,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MPListViewController *vc = [[MPListViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    if (indexPath.row == 0) {
+        MPListViewController *vc = [[MPListViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else {
+        MPDetailViewController *detailVC = [[MPDetailViewController alloc] init];
+        [self.navigationController pushViewController:detailVC animated:YES];
+    }
+    
 }
 
 @end
