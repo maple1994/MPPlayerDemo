@@ -11,6 +11,7 @@
 #import "ZFDouYinControlView.h"
 #import <ZFPlayer.h>
 #import <ZFPlayerControlView.h>
+#import "MPTransition.h"
 
 static NSString *kIdentifier = @"kIdentifier";
 
@@ -18,7 +19,6 @@ static NSString *kIdentifier = @"kIdentifier";
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIButton *backBtn;
-@property (nonatomic, strong) UIButton *testBtn;
 @property (nonatomic, strong) ZFDouYinControlView *controlView;
 @property (nonatomic, strong) NSIndexPath *playingIndexPath;
 @property (nonatomic, strong) ZFPlayerControlView *preControlView;
@@ -34,7 +34,6 @@ static NSString *kIdentifier = @"kIdentifier";
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.backBtn];
-    [self.view addSubview:self.testBtn];
     
     @weakify(self)
     if (!self.player) {
@@ -64,7 +63,6 @@ static NSString *kIdentifier = @"kIdentifier";
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     self.backBtn.frame = CGRectMake(15, CGRectGetMaxY([UIApplication sharedApplication].statusBarFrame), 36, 36);
-    self.testBtn.frame = CGRectMake(ZFPlayerScreenWidth - 36 - 15, CGRectGetMaxY([UIApplication sharedApplication].statusBarFrame), 36, 36);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -120,6 +118,7 @@ static NSString *kIdentifier = @"kIdentifier";
             [self playTheVideoAtIndexPath:self.playingIndexPath scrollToTop:NO];
         }
     }
+    self.navigationController.delegate = self;
 }
 
 - (void)didMoveToParentViewController:(UIViewController *)parent {
@@ -130,6 +129,9 @@ static NSString *kIdentifier = @"kIdentifier";
                 [subView removeFromSuperview];
             }
             self.player.controlView = self.preControlView;
+            if (self.popbackBlock) {
+                self.popbackBlock();
+            }
         }
     }
 }
@@ -188,12 +190,8 @@ static NSString *kIdentifier = @"kIdentifier";
 #pragma mark - private method
 
 - (void)backClick:(UIButton *)sender {
-    if (sender == self.testBtn) {
-        [self.player stop];
-    }else {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-
+    [self.navigationController popViewControllerAnimated:YES];
+    self.navigationController.delegate = self;
 }
 
 /// play the video
@@ -256,20 +254,16 @@ static NSString *kIdentifier = @"kIdentifier";
     return _backBtn;
 }
 
-- (UIButton *)testBtn {
-    if (!_testBtn) {
-        _testBtn= [UIButton buttonWithType:UIButtonTypeCustom];
-        [_testBtn setImage:[UIImage imageNamed:@"icon_titlebar_whiteback"] forState:UIControlStateNormal];
-        [_testBtn addTarget:self action:@selector(backClick:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _testBtn;
-}
-
 - (void)setPlayer:(MPPlayerController *)player
 {
     _player = player;
     self.preControlView = (ZFPlayerControlView *)player.controlView;
     [self.preControlView removeFromSuperview];
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{
+    return [MPTransition animationWithDuration:0.3 startView:self.startView startImage:self.startImage player:self.player isChange:NO operation:operation completion:^{
+    }];
 }
 
 

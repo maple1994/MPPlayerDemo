@@ -10,11 +10,14 @@
 #import "MPPlayerController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MPDetailViewController : UIViewController
+@interface MPDetailViewController : UIViewController<UINavigationControllerDelegate>
 
 @property (nonatomic, strong) MPPlayerController *player;
 @property (nonatomic) NSInteger index;
 @property (nonatomic, strong) NSMutableArray *dataSource;
+@property (nonatomic, strong) UIView *startView;
+@property (nonatomic, strong) UIImage *startImage;
+@property (nonatomic, copy) void(^popbackBlock)(void);
 
 @end
 

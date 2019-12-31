@@ -19,7 +19,7 @@
 @interface ZFTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) ZFTableViewCellLayout *layout;
-
+@property (nonatomic, strong, readonly) UIImageView *coverImageView;
 @property (nonatomic, copy) void(^playCallback)(void);
 
 - (void)setDelegate:(id<ZFTableViewCellDelegate>)delegate withIndexPath:(NSIndexPath *)indexPath;

@@ -30,7 +30,7 @@
 // MARK: - UITableViewDelegate, UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -40,7 +40,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ID"];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+    if (indexPath.row == 0) {
+        cell.textLabel.text = @"预加载-列表播放-无缝续播";
+    }else if (indexPath.row == 1) {
+        cell.textLabel.text = @"预加载-抖音列表";
+    }
     return cell;
 }
 
@@ -49,11 +53,10 @@
     if (indexPath.row == 0) {
         MPListViewController *vc = [[MPListViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
-    }else {
+    }else if (indexPath.row == 1) {
         MPDetailViewController *detailVC = [[MPDetailViewController alloc] init];
         [self.navigationController pushViewController:detailVC animated:YES];
     }
-    
 }
 
 @end

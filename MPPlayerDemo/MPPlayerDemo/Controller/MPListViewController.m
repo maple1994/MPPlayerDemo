@@ -22,6 +22,7 @@ static NSString *kIdentifier = @"kIdentifier";
 @property (nonatomic, strong) MPPlayerController *player;
 @property (nonatomic, strong) ZFPlayerControlView *controlView;
 @property (nonatomic, strong) NSMutableArray *playableArray;
+@property (nonatomic) BOOL isInited;
 
 @end
 
@@ -62,11 +63,15 @@ static NSString *kIdentifier = @"kIdentifier";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    @weakify(self)
-    [self.tableView zf_filterShouldPlayCellWhileScrolled:^(NSIndexPath *indexPath) {
-        @strongify(self)
-        [self playTheVideoAtIndexPath:indexPath scrollToTop:NO];
-    }];
+    if (!self.isInited) {
+        self.isInited = YES;
+        @weakify(self)
+        [self.tableView zf_filterShouldPlayCellWhileScrolled:^(NSIndexPath *indexPath) {
+            @strongify(self)
+            [self playTheVideoAtIndexPath:indexPath scrollToTop:NO];
+        }];
+    }
+    
 }
 
 - (void)requestData {
@@ -138,10 +143,30 @@ static NSString *kIdentifier = @"kIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    ZFTableViewCell *cell = (ZFTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    NSIndexPath *currentIndexPath = [self.tableView indexPathForCell:cell];
+    // 点击的不是正在播放的cell，就先播放再跳转
+    if ([currentIndexPath compare:self.tableView.zf_playingIndexPath] != NSOrderedSame) {
+        [self.player stopCurrentPlayingCell];
+        self.tableView.zf_playingIndexPath = currentIndexPath;
+        [self playTheVideoAtIndexPath:currentIndexPath scrollToTop:NO];
+        [self.player.currentPlayerManager.view layoutIfNeeded];
+    }
+    self.tableView.zf_playingIndexPath = currentIndexPath;
+    
     MPDetailViewController *vc = [[MPDetailViewController alloc] init];
     vc.player = self.player;
     vc.index = indexPath.row;
+    vc.startImage = cell.coverImageView.image;
+    vc.startView = cell.coverImageView;
     vc.dataSource = [self.playableArray mutableCopy];
+    @weakify(self)
+    vc.popbackBlock = ^{
+        @strongify(self)
+        [self.player updateScrollViewPlayerToCell];
+        [self.player.currentPlayerManager play];
+    };
+    self.navigationController.delegate = vc;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

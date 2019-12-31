@@ -30,6 +30,7 @@
 		A238FDC523B631D500B91616 /* MPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDC423B631D500B91616 /* MPDetailViewController.m */; };
 		A238FDC823B632F500B91616 /* ZFDouYinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDC623B632F500B91616 /* ZFDouYinCell.m */; };
 		A238FDCB23B6333A00B91616 /* ZFDouYinControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDCA23B6333A00B91616 /* ZFDouYinControlView.m */; };
+		A288280523BB4A59006356BD /* MPTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A288280423BB4A59006356BD /* MPTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		A238FDC723B632F500B91616 /* ZFDouYinCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDouYinCell.h; sourceTree = "<group>"; };
 		A238FDC923B6333A00B91616 /* ZFDouYinControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDouYinControlView.h; sourceTree = "<group>"; };
 		A238FDCA23B6333A00B91616 /* ZFDouYinControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFDouYinControlView.m; sourceTree = "<group>"; };
+		A288280323BB4A59006356BD /* MPTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPTransition.h; sourceTree = "<group>"; };
+		A288280423BB4A59006356BD /* MPTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPTransition.m; sourceTree = "<group>"; };
 		CF769E351532EF9AF663DD17 /* libPods-MPPlayerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MPPlayerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1D743BEE01F4282DB6B4B3 /* libPods-MPPlayerDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MPPlayerDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -167,6 +170,7 @@
 		A238FD6223B5A30500B91616 /* MPPlayerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A288280223BB4625006356BD /* Transition */,
 				A238FDAA23B5E40C00B91616 /* Other */,
 				A238FDA623B5E3A900B91616 /* Controller */,
 				A238FDA523B5E39C00B91616 /* View */,
@@ -260,6 +264,15 @@
 				A238FDAE23B5E40C00B91616 /* NSString+Size.m */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		A288280223BB4625006356BD /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				A288280323BB4A59006356BD /* MPTransition.h */,
+				A288280423BB4A59006356BD /* MPTransition.m */,
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 		F22D1EC6004D5EF55DF9A9A6 /* Frameworks */ = {
@@ -505,6 +518,7 @@
 				A238FDC823B632F500B91616 /* ZFDouYinCell.m in Sources */,
 				A238FD6523B5A30500B91616 /* AppDelegate.m in Sources */,
 				A238FDCB23B6333A00B91616 /* ZFDouYinControlView.m in Sources */,
+				A288280523BB4A59006356BD /* MPTransition.m in Sources */,
 				A238FDA923B5E3EC00B91616 /* ZFTableViewCell.m in Sources */,
 				A238FDAF23B5E40C00B91616 /* ZFTableViewCellLayout.m in Sources */,
 				A238FDB023B5E40C00B91616 /* NSString+Size.m in Sources */,
