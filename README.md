@@ -9,6 +9,8 @@ ZFPlayer进行播放，KTVHTTPCache负责预加载的一个播放器Demo
 
 gif演示：
 ![playerDemo.gif](playerDemo.gif)
+gif看不见的，可以看简书的
+https://www.jianshu.com/p/3ffb26bf862c
 
 
 # 一、缓存+预加载功能
