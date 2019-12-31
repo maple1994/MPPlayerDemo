@@ -262,7 +262,7 @@ static NSString *kIdentifier = @"kIdentifier";
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{
-    return [MPTransition animationWithDuration:0.3 startView:self.startView startImage:self.startImage player:self.player isChange:NO operation:operation completion:^{
+    return [MPTransition animationWithDuration:0.3 startView:self.startView startImage:self.startImage player:self.player operation:operation completion:^{
     }];
 }
 

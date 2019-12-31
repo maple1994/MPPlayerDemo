@@ -6,9 +6,9 @@
 //  Copyright © 2019 Beauty-ruanjian. All rights reserved.
 //
 
-#import "XSTPreLoaderModel.h"
+#import "MPPreLoaderModel.h"
 
-@implementation XSTPreLoaderModel
+@implementation MPPreLoaderModel
 
 - (instancetype)initWithURL: (NSString *)url loader: (KTVHCDataLoader *)loader
 {

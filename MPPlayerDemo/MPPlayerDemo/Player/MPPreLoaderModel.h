@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// 预加载模型
-@interface XSTPreLoaderModel : NSObject
+@interface MPPreLoaderModel : NSObject
 
 /// 加载的URL
 @property (nonatomic, copy, readonly) NSString *url;

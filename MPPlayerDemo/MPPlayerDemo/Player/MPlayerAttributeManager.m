@@ -1,11 +1,5 @@
-//
-//  XSTPlayerAssetManager.m
-//  XStarSDK
-//
-//  Created by Beauty-ruanjian on 2019/7/4.
-//
 
-#import "XSTPlayerAttributeManager.h"
+#import "MPlayerAttributeManager.h"
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <ZFPlayer/ZFPlayer.h>
@@ -63,7 +57,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
 
 @end
 
-@interface XSTPlayerAttributeManager () {
+@interface MPlayerAttributeManager () {
     id _timeObserver;
     id _itemEndObserver;
     ZFKVOController *_playerItemKVO;
@@ -81,7 +75,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
 
 @end
 
-@implementation XSTPlayerAttributeManager
+@implementation MPlayerAttributeManager
 
 @synthesize view                           = _view;
 @synthesize currentTime                    = _currentTime;

@@ -17,7 +17,6 @@
 @property (nonatomic, assign) NSTimeInterval duration;
 @property (nonatomic, strong) MPPlayerController *player;
 @property (nonatomic, assign) UINavigationControllerOperation operation;
-@property (nonatomic, assign) BOOL isChange;
 @property (nonatomic, assign) void(^completion)(void);
 @property (nonatomic, strong) UIView *effectView;
 
@@ -29,13 +28,11 @@
                               startView:(UIView *)startView
                              startImage:(UIImage *)startImage
                                  player: (MPPlayerController *)player
-                               isChange: (BOOL) isChange
                               operation:(UINavigationControllerOperation)operation
                              completion:(void(^)(void))completion
 {
     MPTransition *animation = [MPTransition new];
     animation.player = player;
-    animation.isChange = isChange;
     animation.duration = duration;
     animation.startView = startView;
     animation.startImage = startImage;

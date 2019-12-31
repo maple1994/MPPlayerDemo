@@ -6,16 +6,16 @@
 //
 
 #import "MPPlayerController.h"
-#import "XSTPlayerAttributeManager.h"
+#import "MPlayerAttributeManager.h"
 #import <KTVHTTPCache.h>
-#import "XSTPreLoaderModel.h"
+#import "MPPreLoaderModel.h"
 #import <ZFUtilities.h>
 
 @interface MPPlayerController()<KTVHCDataLoaderDelegate>
 
 @property (nonatomic, strong) ZFPlayerController *player;
 /// 预加载的模型数组
-@property (nonatomic, strong) NSMutableArray<XSTPreLoaderModel *> *preloadArr;
+@property (nonatomic, strong) NSMutableArray<MPPreLoaderModel *> *preloadArr;
 @property (nonatomic, assign) BOOL isAnimating;
 @property (nonatomic, assign) UIInterfaceOrientation orientation;
 
@@ -33,7 +33,7 @@
 {
     if (self = [super init])
     {
-        XSTPlayerAttributeManager *mgr = [[XSTPlayerAttributeManager alloc] init];
+        MPlayerAttributeManager *mgr = [[MPlayerAttributeManager alloc] init];
         _player = [[ZFPlayerController alloc] initWithPlayerManager:mgr containerView:containerView];
         _player.playerDisapperaPercent = 1.0;
         [_player setCustomAudioSession:YES];
@@ -51,7 +51,7 @@
 {
     if (self = [super init])
     {
-        XSTPlayerAttributeManager *mgr = [[XSTPlayerAttributeManager alloc] init];
+        MPlayerAttributeManager *mgr = [[MPlayerAttributeManager alloc] init];
         _player = [[ZFPlayerController alloc] initWithScrollView:scrollView playerManager:mgr containerViewTag:containerViewTag];
         _player.disableGestureTypes = ZFPlayerDisableGestureTypesPan;
         _player.playerDisapperaPercent = 1.0;
@@ -214,7 +214,7 @@
     {
         index += 1;
         id<XSTPlayable> model = self.playableArray[i];
-        XSTPreLoaderModel *preModel = [self getPreloadModel: model.video_url];
+        MPPreLoaderModel *preModel = [self getPreloadModel: model.video_url];
         if (preModel) {
             @synchronized (self.preloadArr) {
                 [self.preloadArr addObject: preModel];
@@ -226,7 +226,7 @@
     {
         index += 1;
         id<XSTPlayable> model = self.playableArray[i];
-        XSTPreLoaderModel *preModel = [self getPreloadModel: model.video_url];
+        MPPreLoaderModel *preModel = [self getPreloadModel: model.video_url];
         if (preModel) {
             @synchronized (self.preloadArr) {
                 [self.preloadArr addObject:preModel];
@@ -244,21 +244,21 @@
         {
             return;
         }
-        [self.preloadArr enumerateObjectsUsingBlock:^(XSTPreLoaderModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.preloadArr enumerateObjectsUsingBlock:^(MPPreLoaderModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [obj.loader close];
         }];
         [self.preloadArr removeAllObjects];
     }
 }
 
-- (XSTPreLoaderModel *)getPreloadModel: (NSString *)urlStr
+- (MPPreLoaderModel *)getPreloadModel: (NSString *)urlStr
 {
     if (!urlStr)
         return nil;
     // 判断是否已在队列中
     __block Boolean res = NO;
     @synchronized (self.preloadArr) {
-        [self.preloadArr enumerateObjectsUsingBlock:^(XSTPreLoaderModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.preloadArr enumerateObjectsUsingBlock:^(MPPreLoaderModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([obj.url isEqualToString:urlStr])
             {
                 res = YES;
@@ -276,7 +276,7 @@
         return nil;
     KTVHCDataRequest *req = [[KTVHCDataRequest alloc] initWithURL:proxyUrl headers:[NSDictionary dictionary]];
     KTVHCDataLoader *loader = [KTVHTTPCache cacheLoaderWithRequest:req];
-    XSTPreLoaderModel *preModel = [[XSTPreLoaderModel alloc] initWithURL:urlStr loader:loader];
+    MPPreLoaderModel *preModel = [[MPPreLoaderModel alloc] initWithURL:urlStr loader:loader];
     return preModel;
 }
 
@@ -285,7 +285,7 @@
     @synchronized (self.preloadArr) {
         if (self.preloadArr.count == 0)
             return;
-        XSTPreLoaderModel *model = self.preloadArr.firstObject;
+        MPPreLoaderModel *model = self.preloadArr.firstObject;
         model.loader.delegate = self;
         [model.loader prepare];
     }
@@ -295,8 +295,8 @@
 - (void)removePreloadTask: (KTVHCDataLoader *)loader
 {
     @synchronized (self.preloadArr) {
-        XSTPreLoaderModel *target = nil;
-        for (XSTPreLoaderModel *model in self.preloadArr) {
+        MPPreLoaderModel *target = nil;
+        for (MPPreLoaderModel *model in self.preloadArr) {
             if ([model.loader isEqual:loader])
             {
                 target = model;
@@ -339,7 +339,7 @@
     return self.player.playingIndexPath;
 }
 
-- (NSMutableArray<XSTPreLoaderModel *> *)preloadArr
+- (NSMutableArray<MPPreLoaderModel *> *)preloadArr
 {
     if (_preloadArr == nil)
     {
@@ -387,7 +387,7 @@
     NSArray *subArr = [playableArray subarrayWithRange: range];
     for (id<XSTPlayable> model in subArr)
     {
-        XSTPreLoaderModel *preload = [self getPreloadModel:model.video_url];
+        MPPreLoaderModel *preload = [self getPreloadModel:model.video_url];
         if (preload) {
             @synchronized (self.preloadArr) {
                 [self.preloadArr addObject: preload];

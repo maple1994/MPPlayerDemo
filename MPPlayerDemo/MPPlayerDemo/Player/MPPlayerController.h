@@ -1,9 +1,4 @@
-//
-//  XSTPlayerController.h
-//  XStarSDK
-//
-//  Created by Beauty-ruanjian on 2019/7/4.
-//
+
 
 #import <Foundation/Foundation.h>
 #import <ZFPlayer.h>

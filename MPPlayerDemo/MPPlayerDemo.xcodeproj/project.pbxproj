@@ -25,8 +25,8 @@
 		A238FDB023B5E40C00B91616 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDAE23B5E40C00B91616 /* NSString+Size.m */; };
 		A238FDB323B5F22000B91616 /* MPListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDB223B5F22000B91616 /* MPListViewController.m */; };
 		A238FDBC23B60CCF00B91616 /* MPPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDB923B60CCF00B91616 /* MPPlayerController.m */; };
-		A238FDC123B60E7E00B91616 /* XSTPreLoaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDBD23B60E7D00B91616 /* XSTPreLoaderModel.m */; };
-		A238FDC223B60E7E00B91616 /* XSTPlayerAttributeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDC023B60E7E00B91616 /* XSTPlayerAttributeManager.m */; };
+		A238FDC123B60E7E00B91616 /* MPPreLoaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDBD23B60E7D00B91616 /* MPPreLoaderModel.m */; };
+		A238FDC223B60E7E00B91616 /* MPlayerAttributeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDC023B60E7E00B91616 /* MPlayerAttributeManager.m */; };
 		A238FDC523B631D500B91616 /* MPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDC423B631D500B91616 /* MPDetailViewController.m */; };
 		A238FDC823B632F500B91616 /* ZFDouYinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDC623B632F500B91616 /* ZFDouYinCell.m */; };
 		A238FDCB23B6333A00B91616 /* ZFDouYinControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDCA23B6333A00B91616 /* ZFDouYinControlView.m */; };
@@ -88,10 +88,10 @@
 		A238FDB923B60CCF00B91616 /* MPPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPlayerController.m; sourceTree = "<group>"; };
 		A238FDBA23B60CCF00B91616 /* MPPlayableProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPlayableProtocol.h; sourceTree = "<group>"; };
 		A238FDBB23B60CCF00B91616 /* MPPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPlayerController.h; sourceTree = "<group>"; };
-		A238FDBD23B60E7D00B91616 /* XSTPreLoaderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSTPreLoaderModel.m; sourceTree = "<group>"; };
-		A238FDBE23B60E7E00B91616 /* XSTPlayerAttributeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSTPlayerAttributeManager.h; sourceTree = "<group>"; };
-		A238FDBF23B60E7E00B91616 /* XSTPreLoaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSTPreLoaderModel.h; sourceTree = "<group>"; };
-		A238FDC023B60E7E00B91616 /* XSTPlayerAttributeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSTPlayerAttributeManager.m; sourceTree = "<group>"; };
+		A238FDBD23B60E7D00B91616 /* MPPreLoaderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPreLoaderModel.m; sourceTree = "<group>"; };
+		A238FDBE23B60E7E00B91616 /* MPlayerAttributeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPlayerAttributeManager.h; sourceTree = "<group>"; };
+		A238FDBF23B60E7E00B91616 /* MPPreLoaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPreLoaderModel.h; sourceTree = "<group>"; };
+		A238FDC023B60E7E00B91616 /* MPlayerAttributeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPlayerAttributeManager.m; sourceTree = "<group>"; };
 		A238FDC323B631D500B91616 /* MPDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPDetailViewController.h; sourceTree = "<group>"; };
 		A238FDC423B631D500B91616 /* MPDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPDetailViewController.m; sourceTree = "<group>"; };
 		A238FDC623B632F500B91616 /* ZFDouYinCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFDouYinCell.m; sourceTree = "<group>"; };
@@ -222,10 +222,10 @@
 			children = (
 				A238FDC923B6333A00B91616 /* ZFDouYinControlView.h */,
 				A238FDCA23B6333A00B91616 /* ZFDouYinControlView.m */,
-				A238FDBE23B60E7E00B91616 /* XSTPlayerAttributeManager.h */,
-				A238FDC023B60E7E00B91616 /* XSTPlayerAttributeManager.m */,
-				A238FDBF23B60E7E00B91616 /* XSTPreLoaderModel.h */,
-				A238FDBD23B60E7D00B91616 /* XSTPreLoaderModel.m */,
+				A238FDBE23B60E7E00B91616 /* MPlayerAttributeManager.h */,
+				A238FDC023B60E7E00B91616 /* MPlayerAttributeManager.m */,
+				A238FDBF23B60E7E00B91616 /* MPPreLoaderModel.h */,
+				A238FDBD23B60E7D00B91616 /* MPPreLoaderModel.m */,
 				A238FDBA23B60CCF00B91616 /* MPPlayableProtocol.h */,
 				A238FDBB23B60CCF00B91616 /* MPPlayerController.h */,
 				A238FDB923B60CCF00B91616 /* MPPlayerController.m */,
@@ -511,7 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A238FDC123B60E7E00B91616 /* XSTPreLoaderModel.m in Sources */,
+				A238FDC123B60E7E00B91616 /* MPPreLoaderModel.m in Sources */,
 				A238FD6B23B5A30500B91616 /* ViewController.m in Sources */,
 				A238FDC523B631D500B91616 /* MPDetailViewController.m in Sources */,
 				A238FDB323B5F22000B91616 /* MPListViewController.m in Sources */,
@@ -522,7 +522,7 @@
 				A238FDA923B5E3EC00B91616 /* ZFTableViewCell.m in Sources */,
 				A238FDAF23B5E40C00B91616 /* ZFTableViewCellLayout.m in Sources */,
 				A238FDB023B5E40C00B91616 /* NSString+Size.m in Sources */,
-				A238FDC223B60E7E00B91616 /* XSTPlayerAttributeManager.m in Sources */,
+				A238FDC223B60E7E00B91616 /* MPlayerAttributeManager.m in Sources */,
 				A238FDA223B5DF1400B91616 /* ZFTableData.m in Sources */,
 				A238FD7623B5A30600B91616 /* main.m in Sources */,
 				A238FDBC23B60CCF00B91616 /* MPPlayerController.m in Sources */,

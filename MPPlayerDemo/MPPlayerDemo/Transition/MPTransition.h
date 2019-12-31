@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param startView 开始视图
  @param startImage 开始图片
  @param  player 播放器
- @param isChange 开始视图的位置是否发生变化
  @param operation 动画形式
  @param completion 动画完成block
  @return 动画实例
@@ -31,7 +30,6 @@ NS_ASSUME_NONNULL_BEGIN
                             startView:(UIView *)startView
                            startImage:(UIImage *)startImage
                                player: (MPPlayerController *)player
-                             isChange: (BOOL) isChange
                             operation:(UINavigationControllerOperation)operation
                            completion:(void(^)(void))completion;
 
