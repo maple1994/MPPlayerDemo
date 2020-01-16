@@ -1,15 +1,14 @@
-# MPPlayerDemo
-ZFPlayer进行播放，KTVHTTPCache负责预加载的一个播放器Demo
-
 #Demo演示的功能
+`提示：文末有相关的Demo下载链接`
 * ZFPlayer的列表播放
 * 使用KTVHTTPCache实现缓存（播放过的视频无需再下载）
 * 使用KTVHTTPCache实现预加载（可以实现秒播）
 * 自定义转场动画（实现无缝衔接的播放效果）
+* 瀑布流页面（双排列表展示，以及转场动画）
 
 gif演示：
-![playerDemo.gif](playerDemo.gif)
-gif看不见的，可以看简书的
+![playerDemo.gif](https://upload-images.jianshu.io/upload_images/7789910-e659f2bab86829e7.gif?imageMogr2/auto-orient/strip)
+gif看不到的，可以到简书上看
 https://www.jianshu.com/p/3ffb26bf862c
 
 
@@ -468,6 +467,10 @@ mgr实现ZFPlayerMediaPlayback协议，然后在初始化时，开启本地服�
 ```
 
 #三、相关链接
+* 瀑布流
+https://www.jianshu.com/p/7976739e9034
+* Demo链接
+  https://github.com/maple1994/MPPlayerDemo
 * ZFPlayer
   https://github.com/renzifeng/ZFPlayer
 * KTVHttpCache
