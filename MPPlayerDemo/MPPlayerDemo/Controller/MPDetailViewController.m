@@ -264,7 +264,8 @@ static NSString *kIdentifier = @"kIdentifier";
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{
     if (self.startView == nil)
         return nil;
-    if (self.playingIndexPath.row != self.index)
+    if (self.playingIndexPath &&
+        self.playingIndexPath.row != self.index)
         return nil;
     return [MPTransition animationWithDuration:0.3 startView:self.startView startImage:self.startImage player:self.player operation:operation completion:^{
     }];
