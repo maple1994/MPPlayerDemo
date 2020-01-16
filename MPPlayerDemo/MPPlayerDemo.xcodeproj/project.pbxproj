@@ -30,6 +30,9 @@
 		A238FDC523B631D500B91616 /* MPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDC423B631D500B91616 /* MPDetailViewController.m */; };
 		A238FDC823B632F500B91616 /* ZFDouYinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDC623B632F500B91616 /* ZFDouYinCell.m */; };
 		A238FDCB23B6333A00B91616 /* ZFDouYinControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FDCA23B6333A00B91616 /* ZFDouYinControlView.m */; };
+		A27FB7C423D040F600D0F278 /* MPWaterFallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FB7C323D040F600D0F278 /* MPWaterFallViewController.m */; };
+		A27FB7C823D0413600D0F278 /* MPWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FB7C723D0413600D0F278 /* MPWaterFallLayout.m */; };
+		A27FB7CB23D0415300D0F278 /* MPWaterFallCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FB7CA23D0415300D0F278 /* MPWaterFallCollectionViewCell.m */; };
 		A288280523BB4A59006356BD /* MPTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A288280423BB4A59006356BD /* MPTransition.m */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +101,12 @@
 		A238FDC723B632F500B91616 /* ZFDouYinCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDouYinCell.h; sourceTree = "<group>"; };
 		A238FDC923B6333A00B91616 /* ZFDouYinControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDouYinControlView.h; sourceTree = "<group>"; };
 		A238FDCA23B6333A00B91616 /* ZFDouYinControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFDouYinControlView.m; sourceTree = "<group>"; };
+		A27FB7C223D040F600D0F278 /* MPWaterFallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPWaterFallViewController.h; sourceTree = "<group>"; };
+		A27FB7C323D040F600D0F278 /* MPWaterFallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPWaterFallViewController.m; sourceTree = "<group>"; };
+		A27FB7C623D0413600D0F278 /* MPWaterFallLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPWaterFallLayout.h; sourceTree = "<group>"; };
+		A27FB7C723D0413600D0F278 /* MPWaterFallLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPWaterFallLayout.m; sourceTree = "<group>"; };
+		A27FB7C923D0415300D0F278 /* MPWaterFallCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPWaterFallCollectionViewCell.h; sourceTree = "<group>"; };
+		A27FB7CA23D0415300D0F278 /* MPWaterFallCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPWaterFallCollectionViewCell.m; sourceTree = "<group>"; };
 		A288280323BB4A59006356BD /* MPTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPTransition.h; sourceTree = "<group>"; };
 		A288280423BB4A59006356BD /* MPTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPTransition.m; sourceTree = "<group>"; };
 		CF769E351532EF9AF663DD17 /* libPods-MPPlayerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MPPlayerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +179,7 @@
 		A238FD6223B5A30500B91616 /* MPPlayerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A27FB7C523D0411F00D0F278 /* WaterFall */,
 				A288280223BB4625006356BD /* Transition */,
 				A238FDAA23B5E40C00B91616 /* Other */,
 				A238FDA623B5E3A900B91616 /* Controller */,
@@ -240,6 +250,8 @@
 				A238FDC623B632F500B91616 /* ZFDouYinCell.m */,
 				A238FDA723B5E3EC00B91616 /* ZFTableViewCell.h */,
 				A238FDA823B5E3EC00B91616 /* ZFTableViewCell.m */,
+				A27FB7C923D0415300D0F278 /* MPWaterFallCollectionViewCell.h */,
+				A27FB7CA23D0415300D0F278 /* MPWaterFallCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +263,8 @@
 				A238FDB223B5F22000B91616 /* MPListViewController.m */,
 				A238FDC323B631D500B91616 /* MPDetailViewController.h */,
 				A238FDC423B631D500B91616 /* MPDetailViewController.m */,
+				A27FB7C223D040F600D0F278 /* MPWaterFallViewController.h */,
+				A27FB7C323D040F600D0F278 /* MPWaterFallViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,6 +278,15 @@
 				A238FDAE23B5E40C00B91616 /* NSString+Size.m */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		A27FB7C523D0411F00D0F278 /* WaterFall */ = {
+			isa = PBXGroup;
+			children = (
+				A27FB7C623D0413600D0F278 /* MPWaterFallLayout.h */,
+				A27FB7C723D0413600D0F278 /* MPWaterFallLayout.m */,
+			);
+			path = WaterFall;
 			sourceTree = "<group>";
 		};
 		A288280223BB4625006356BD /* Transition */ = {
@@ -515,8 +538,11 @@
 				A238FD6B23B5A30500B91616 /* ViewController.m in Sources */,
 				A238FDC523B631D500B91616 /* MPDetailViewController.m in Sources */,
 				A238FDB323B5F22000B91616 /* MPListViewController.m in Sources */,
+				A27FB7C423D040F600D0F278 /* MPWaterFallViewController.m in Sources */,
+				A27FB7C823D0413600D0F278 /* MPWaterFallLayout.m in Sources */,
 				A238FDC823B632F500B91616 /* ZFDouYinCell.m in Sources */,
 				A238FD6523B5A30500B91616 /* AppDelegate.m in Sources */,
+				A27FB7CB23D0415300D0F278 /* MPWaterFallCollectionViewCell.m in Sources */,
 				A238FDCB23B6333A00B91616 /* ZFDouYinControlView.m in Sources */,
 				A288280523BB4A59006356BD /* MPTransition.m in Sources */,
 				A238FDA923B5E3EC00B91616 /* ZFTableViewCell.m in Sources */,

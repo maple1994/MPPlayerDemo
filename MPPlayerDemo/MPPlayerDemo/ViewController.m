@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "MPListViewController.h"
 #import "MPDetailViewController.h"
+#import "MPWaterFallViewController.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -30,7 +31,7 @@
 // MARK: - UITableViewDelegate, UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -44,6 +45,8 @@
         cell.textLabel.text = @"预加载-列表播放-无缝续播";
     }else if (indexPath.row == 1) {
         cell.textLabel.text = @"预加载-抖音列表";
+    }else if (indexPath.row == 2) {
+        cell.textLabel.text = @"瀑布流列表-转场动画演示";
     }
     return cell;
 }
@@ -56,6 +59,9 @@
     }else if (indexPath.row == 1) {
         MPDetailViewController *detailVC = [[MPDetailViewController alloc] init];
         [self.navigationController pushViewController:detailVC animated:YES];
+    }else if (indexPath.row == 2) {
+        MPWaterFallViewController *vc = [[MPWaterFallViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

@@ -12,6 +12,7 @@
 #import "MPPlayerController.h"
 #import <ZFPlayerControlView.h>
 #import "MPDetailViewController.h"
+#import "ZFUtilities.h"
 
 static NSString *kIdentifier = @"kIdentifier";
 
@@ -33,7 +34,8 @@ static NSString *kIdentifier = @"kIdentifier";
     self.tableView = [[UITableView alloc] init];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.frame = self.view.bounds;
+    CGFloat y = iPhoneX ? 88 : 64;
+    self.tableView.frame = CGRectMake(0, y, self.view.bounds.size.width, self.view.bounds.size.height - y);
     [self.tableView registerClass:[ZFTableViewCell class] forCellReuseIdentifier:kIdentifier];
     if (@available(iOS 11.0, *)) {
         _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
