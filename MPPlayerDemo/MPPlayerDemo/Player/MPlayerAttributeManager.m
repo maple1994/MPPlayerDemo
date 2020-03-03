@@ -72,6 +72,8 @@ static NSString *const kPresentationSize         = @"presentationSize";
 @property (nonatomic, copy) void(^muteStateBlock)(void);
 /// 记录每个url的加载失败次数的字典，最多重试3次
 @property (nonatomic, strong) NSMutableDictionary *retryDic;
+/// 记录可以播放的视频后缀
+@property (nonatomic, copy) NSArray *playableSuffixArray;
 
 @end
 
@@ -234,6 +236,14 @@ static NSString *const kPresentationSize         = @"presentationSize";
     return image;
 }
 
+- (BOOL)isPlayableSuffix: (NSString *)suffix
+{
+    if (!suffix || suffix.length == 0)
+        return NO;
+    suffix = [suffix uppercaseString];
+    return [self.playableSuffixArray containsObject:suffix];
+}
+
 #pragma mark - private method
 
 /// Calculate buffer progress
@@ -383,7 +393,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
                     self.retryDic[self.assetURL.absoluteString] = @(retryCount);
                 }else {
                     retryCount = [self.retryDic[self.assetURL.absoluteString] intValue];
-                    if (retryCount <= 2) {
+                    if (retryCount <= 3) {
                         retryCount += 1;
                         self.retryDic[self.assetURL.absoluteString] = @(retryCount);
                     }
@@ -451,6 +461,14 @@ static NSString *const kPresentationSize         = @"presentationSize";
     return sec;
 }
 
+- (NSArray *)playableSuffixArray
+{
+    if (!_playableSuffixArray) {
+        _playableSuffixArray = @[@"WMV",@"AVI",@"MKV",@"RMVB",@"RM",@"XVID",@"MP4",@"3GP",@"MPG"];
+    }
+    return _playableSuffixArray;
+}
+
 #pragma mark - setter
 
 - (void)setPlayState:(ZFPlayerPlaybackState)playState {
@@ -467,7 +485,8 @@ static NSString *const kPresentationSize         = @"presentationSize";
     if (self.player) [self stop];
     // 如果有缓存，直接取本地缓存
     NSURL *url = [KTVHTTPCache cacheCompleteFileURLWithURL:assetURL];
-    if (url) {
+    NSString *suffix = [url pathExtension];
+    if (url && [self isPlayableSuffix:suffix]) {
         _assetURL = url;
     }else {
         // 设置代理
