@@ -13,6 +13,7 @@ https://www.jianshu.com/p/3ffb26bf862c
 
 
 # 一、缓存+预加载功能
+
 ## 1、播放器mgr核心代码
 mgr实现ZFPlayerMediaPlayback协议，然后在初始化时，开启本地服务器
 ```
@@ -51,6 +52,7 @@ mgr实现ZFPlayerMediaPlayback协议，然后在初始化时，开启本地服�
 }
 ```
 
+
 ##2、播放器Player核心代码
 创建playableProtocol，方便数据管理
 ```
@@ -77,6 +79,7 @@ mgr实现ZFPlayerMediaPlayback协议，然后在初始化时，开启本地服�
 @property (nonatomic, copy) NSArray<id<XSTPlayable>> *playableArray;
 ....
 ```
+
 
 ##3、预加载核心代码
 预加载的时机是当前视频可以播放了，才进行预加载
