@@ -10,10 +10,13 @@
 #import "MPListViewController.h"
 #import "MPDetailViewController.h"
 #import "MPWaterFallViewController.h"
+#import "MPCardLayoutViewController.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, copy) NSArray *controllerArr;
+@property (nonatomic, copy) NSArray *demoName;
 
 @end
 
@@ -21,6 +24,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.controllerArr = @[
+        @"MPListViewController",
+        @"MPDetailViewController",
+        @"MPWaterFallViewController",
+        @"MPCardLayoutViewController"
+    ];
+    self.demoName = @[
+        @"预加载-列表播放-无缝续播",
+        @"预加载-抖音列表",
+        @"瀑布流列表-转场动画演示",
+        @"卡片布局演示"
+    ];
+    
     self.tableView = [[UITableView alloc] init];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -31,7 +47,7 @@
 // MARK: - UITableViewDelegate, UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return self.demoName.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -41,28 +57,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ID"];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    if (indexPath.row == 0) {
-        cell.textLabel.text = @"预加载-列表播放-无缝续播";
-    }else if (indexPath.row == 1) {
-        cell.textLabel.text = @"预加载-抖音列表";
-    }else if (indexPath.row == 2) {
-        cell.textLabel.text = @"瀑布流列表-转场动画演示";
-    }
+    cell.textLabel.text = self.demoName[indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
-        MPListViewController *vc = [[MPListViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.row == 1) {
-        MPDetailViewController *detailVC = [[MPDetailViewController alloc] init];
-        [self.navigationController pushViewController:detailVC animated:YES];
-    }else if (indexPath.row == 2) {
-        MPWaterFallViewController *vc = [[MPWaterFallViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+    Class cl = NSClassFromString(self.controllerArr[indexPath.row]);
+    UIViewController *vc = [[cl alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

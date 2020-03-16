@@ -34,6 +34,9 @@
 		A27FB7C823D0413600D0F278 /* MPWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FB7C723D0413600D0F278 /* MPWaterFallLayout.m */; };
 		A27FB7CB23D0415300D0F278 /* MPWaterFallCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A27FB7CA23D0415300D0F278 /* MPWaterFallCollectionViewCell.m */; };
 		A288280523BB4A59006356BD /* MPTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A288280423BB4A59006356BD /* MPTransition.m */; };
+		A2D5533B241F51A00063ABAC /* MPCardStackLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D5533A241F51A00063ABAC /* MPCardStackLayout.m */; };
+		A2D5533E241F51E30063ABAC /* MPCardLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D5533D241F51E30063ABAC /* MPCardLayoutViewController.m */; };
+		A2D55341241F568E0063ABAC /* MPCardLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D55340241F568E0063ABAC /* MPCardLayoutCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +112,12 @@
 		A27FB7CA23D0415300D0F278 /* MPWaterFallCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPWaterFallCollectionViewCell.m; sourceTree = "<group>"; };
 		A288280323BB4A59006356BD /* MPTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPTransition.h; sourceTree = "<group>"; };
 		A288280423BB4A59006356BD /* MPTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPTransition.m; sourceTree = "<group>"; };
+		A2D55339241F51A00063ABAC /* MPCardStackLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCardStackLayout.h; sourceTree = "<group>"; };
+		A2D5533A241F51A00063ABAC /* MPCardStackLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPCardStackLayout.m; sourceTree = "<group>"; };
+		A2D5533C241F51E30063ABAC /* MPCardLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCardLayoutViewController.h; sourceTree = "<group>"; };
+		A2D5533D241F51E30063ABAC /* MPCardLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCardLayoutViewController.m; sourceTree = "<group>"; };
+		A2D5533F241F568E0063ABAC /* MPCardLayoutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCardLayoutCell.h; sourceTree = "<group>"; };
+		A2D55340241F568E0063ABAC /* MPCardLayoutCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCardLayoutCell.m; sourceTree = "<group>"; };
 		CF769E351532EF9AF663DD17 /* libPods-MPPlayerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MPPlayerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1D743BEE01F4282DB6B4B3 /* libPods-MPPlayerDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MPPlayerDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -179,6 +188,7 @@
 		A238FD6223B5A30500B91616 /* MPPlayerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A2D55335241F50790063ABAC /* CardLayout */,
 				A27FB7C523D0411F00D0F278 /* WaterFall */,
 				A288280223BB4625006356BD /* Transition */,
 				A238FDAA23B5E40C00B91616 /* Other */,
@@ -252,6 +262,8 @@
 				A238FDA823B5E3EC00B91616 /* ZFTableViewCell.m */,
 				A27FB7C923D0415300D0F278 /* MPWaterFallCollectionViewCell.h */,
 				A27FB7CA23D0415300D0F278 /* MPWaterFallCollectionViewCell.m */,
+				A2D5533F241F568E0063ABAC /* MPCardLayoutCell.h */,
+				A2D55340241F568E0063ABAC /* MPCardLayoutCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -265,6 +277,8 @@
 				A238FDC423B631D500B91616 /* MPDetailViewController.m */,
 				A27FB7C223D040F600D0F278 /* MPWaterFallViewController.h */,
 				A27FB7C323D040F600D0F278 /* MPWaterFallViewController.m */,
+				A2D5533C241F51E30063ABAC /* MPCardLayoutViewController.h */,
+				A2D5533D241F51E30063ABAC /* MPCardLayoutViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -296,6 +310,15 @@
 				A288280423BB4A59006356BD /* MPTransition.m */,
 			);
 			path = Transition;
+			sourceTree = "<group>";
+		};
+		A2D55335241F50790063ABAC /* CardLayout */ = {
+			isa = PBXGroup;
+			children = (
+				A2D55339241F51A00063ABAC /* MPCardStackLayout.h */,
+				A2D5533A241F51A00063ABAC /* MPCardStackLayout.m */,
+			);
+			path = CardLayout;
 			sourceTree = "<group>";
 		};
 		F22D1EC6004D5EF55DF9A9A6 /* Frameworks */ = {
@@ -535,15 +558,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A238FDC123B60E7E00B91616 /* MPPreLoaderModel.m in Sources */,
+				A2D5533B241F51A00063ABAC /* MPCardStackLayout.m in Sources */,
 				A238FD6B23B5A30500B91616 /* ViewController.m in Sources */,
 				A238FDC523B631D500B91616 /* MPDetailViewController.m in Sources */,
 				A238FDB323B5F22000B91616 /* MPListViewController.m in Sources */,
 				A27FB7C423D040F600D0F278 /* MPWaterFallViewController.m in Sources */,
 				A27FB7C823D0413600D0F278 /* MPWaterFallLayout.m in Sources */,
 				A238FDC823B632F500B91616 /* ZFDouYinCell.m in Sources */,
+				A2D55341241F568E0063ABAC /* MPCardLayoutCell.m in Sources */,
 				A238FD6523B5A30500B91616 /* AppDelegate.m in Sources */,
 				A27FB7CB23D0415300D0F278 /* MPWaterFallCollectionViewCell.m in Sources */,
 				A238FDCB23B6333A00B91616 /* ZFDouYinControlView.m in Sources */,
+				A2D5533E241F51E30063ABAC /* MPCardLayoutViewController.m in Sources */,
 				A288280523BB4A59006356BD /* MPTransition.m in Sources */,
 				A238FDA923B5E3EC00B91616 /* ZFTableViewCell.m in Sources */,
 				A238FDAF23B5E40C00B91616 /* ZFTableViewCellLayout.m in Sources */,
