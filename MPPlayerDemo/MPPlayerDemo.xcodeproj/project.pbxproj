@@ -10,6 +10,10 @@
 		10B622BB6B60BC63134DD712 /* libPods-MPPlayerDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1D743BEE01F4282DB6B4B3 /* libPods-MPPlayerDemoTests.a */; };
 		27B545956C32F29E02327281 /* libPods-MPPlayerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF769E351532EF9AF663DD17 /* libPods-MPPlayerDemo.a */; };
 		71CE473F9BBF4A6E04BA7BF3 /* libPods-MPPlayerDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B845339415BF76BB389E011 /* libPods-MPPlayerDemoUITests.a */; };
+		A20B3FAD2421EDA700709EB7 /* MPUserDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A20B3FAC2421EDA700709EB7 /* MPUserDynamicViewController.m */; };
+		A20B3FB02421EDC100709EB7 /* MPUserDynamicCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A20B3FAF2421EDC100709EB7 /* MPUserDynamicCollectionViewCell.m */; };
+		A20B3FB42421F77E00709EB7 /* MPUserDynamicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A20B3FB32421F77E00709EB7 /* MPUserDynamicDetailViewController.m */; };
+		A20B3FB72421F94D00709EB7 /* MPUserDynamicTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A20B3FB52421F94D00709EB7 /* MPUserDynamicTransition.m */; };
 		A238FD6523B5A30500B91616 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FD6423B5A30500B91616 /* AppDelegate.m */; };
 		A238FD6B23B5A30500B91616 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A238FD6A23B5A30500B91616 /* ViewController.m */; };
 		A238FD6E23B5A30500B91616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A238FD6C23B5A30500B91616 /* Main.storyboard */; };
@@ -64,6 +68,14 @@
 		5579E6396A373DFD07FBAD0F /* Pods-MPPlayerDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPPlayerDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MPPlayerDemoUITests/Pods-MPPlayerDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		61022B471C07CC74512C84A8 /* Pods-MPPlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPPlayerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MPPlayerDemo/Pods-MPPlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9C1BC10542CC085B4CBC6CE9 /* Pods-MPPlayerDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPPlayerDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MPPlayerDemoTests/Pods-MPPlayerDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A20B3FAB2421EDA700709EB7 /* MPUserDynamicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPUserDynamicViewController.h; sourceTree = "<group>"; };
+		A20B3FAC2421EDA700709EB7 /* MPUserDynamicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPUserDynamicViewController.m; sourceTree = "<group>"; };
+		A20B3FAF2421EDC100709EB7 /* MPUserDynamicCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPUserDynamicCollectionViewCell.m; sourceTree = "<group>"; };
+		A20B3FB12421F03B00709EB7 /* MPUserDynamicCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUserDynamicCollectionViewCell.h; sourceTree = "<group>"; };
+		A20B3FB22421F77D00709EB7 /* MPUserDynamicDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPUserDynamicDetailViewController.h; sourceTree = "<group>"; };
+		A20B3FB32421F77E00709EB7 /* MPUserDynamicDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPUserDynamicDetailViewController.m; sourceTree = "<group>"; };
+		A20B3FB52421F94D00709EB7 /* MPUserDynamicTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUserDynamicTransition.m; sourceTree = "<group>"; };
+		A20B3FB62421F94D00709EB7 /* MPUserDynamicTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUserDynamicTransition.h; sourceTree = "<group>"; };
 		A238FD6023B5A30500B91616 /* MPPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A238FD6323B5A30500B91616 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A238FD6423B5A30500B91616 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -264,6 +276,8 @@
 				A27FB7CA23D0415300D0F278 /* MPWaterFallCollectionViewCell.m */,
 				A2D5533F241F568E0063ABAC /* MPCardLayoutCell.h */,
 				A2D55340241F568E0063ABAC /* MPCardLayoutCell.m */,
+				A20B3FB12421F03B00709EB7 /* MPUserDynamicCollectionViewCell.h */,
+				A20B3FAF2421EDC100709EB7 /* MPUserDynamicCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,6 +293,10 @@
 				A27FB7C323D040F600D0F278 /* MPWaterFallViewController.m */,
 				A2D5533C241F51E30063ABAC /* MPCardLayoutViewController.h */,
 				A2D5533D241F51E30063ABAC /* MPCardLayoutViewController.m */,
+				A20B3FAB2421EDA700709EB7 /* MPUserDynamicViewController.h */,
+				A20B3FAC2421EDA700709EB7 /* MPUserDynamicViewController.m */,
+				A20B3FB22421F77D00709EB7 /* MPUserDynamicDetailViewController.h */,
+				A20B3FB32421F77E00709EB7 /* MPUserDynamicDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -306,6 +324,8 @@
 		A288280223BB4625006356BD /* Transition */ = {
 			isa = PBXGroup;
 			children = (
+				A20B3FB62421F94D00709EB7 /* MPUserDynamicTransition.h */,
+				A20B3FB52421F94D00709EB7 /* MPUserDynamicTransition.m */,
 				A288280323BB4A59006356BD /* MPTransition.h */,
 				A288280423BB4A59006356BD /* MPTransition.m */,
 			);
@@ -558,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A238FDC123B60E7E00B91616 /* MPPreLoaderModel.m in Sources */,
+				A20B3FB42421F77E00709EB7 /* MPUserDynamicDetailViewController.m in Sources */,
 				A2D5533B241F51A00063ABAC /* MPCardStackLayout.m in Sources */,
 				A238FD6B23B5A30500B91616 /* ViewController.m in Sources */,
 				A238FDC523B631D500B91616 /* MPDetailViewController.m in Sources */,
@@ -565,14 +586,17 @@
 				A27FB7C423D040F600D0F278 /* MPWaterFallViewController.m in Sources */,
 				A27FB7C823D0413600D0F278 /* MPWaterFallLayout.m in Sources */,
 				A238FDC823B632F500B91616 /* ZFDouYinCell.m in Sources */,
+				A20B3FB02421EDC100709EB7 /* MPUserDynamicCollectionViewCell.m in Sources */,
 				A2D55341241F568E0063ABAC /* MPCardLayoutCell.m in Sources */,
 				A238FD6523B5A30500B91616 /* AppDelegate.m in Sources */,
 				A27FB7CB23D0415300D0F278 /* MPWaterFallCollectionViewCell.m in Sources */,
 				A238FDCB23B6333A00B91616 /* ZFDouYinControlView.m in Sources */,
+				A20B3FB72421F94D00709EB7 /* MPUserDynamicTransition.m in Sources */,
 				A2D5533E241F51E30063ABAC /* MPCardLayoutViewController.m in Sources */,
 				A288280523BB4A59006356BD /* MPTransition.m in Sources */,
 				A238FDA923B5E3EC00B91616 /* ZFTableViewCell.m in Sources */,
 				A238FDAF23B5E40C00B91616 /* ZFTableViewCellLayout.m in Sources */,
+				A20B3FAD2421EDA700709EB7 /* MPUserDynamicViewController.m in Sources */,
 				A238FDB023B5E40C00B91616 /* NSString+Size.m in Sources */,
 				A238FDC223B60E7E00B91616 /* MPlayerAttributeManager.m in Sources */,
 				A238FDA223B5DF1400B91616 /* ZFTableData.m in Sources */,

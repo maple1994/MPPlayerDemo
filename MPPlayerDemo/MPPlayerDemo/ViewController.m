@@ -28,13 +28,15 @@
         @"MPListViewController",
         @"MPDetailViewController",
         @"MPWaterFallViewController",
-        @"MPCardLayoutViewController"
+        @"MPCardLayoutViewController",
+        @"MPUserDynamicViewController"
     ];
     self.demoName = @[
         @"预加载-列表播放-无缝续播",
         @"预加载-抖音列表",
         @"瀑布流列表-转场动画演示",
-        @"卡片布局演示"
+        @"卡片布局演示",
+        @"转场动画手势退出"
     ];
     
     self.tableView = [[UITableView alloc] init];
