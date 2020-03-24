@@ -54,6 +54,7 @@
     CGFloat distance = y - self.startOffsetY;
     distance = MIN(maxOffset, distance);
     double degree = (distance / maxOffset) * M_PI_2;
+    // 为增量实现一个曲线变化的效果
     double x = 1 - (sin(degree));
     // 计算增量
     CGFloat delta = distance - self.lastOffsetY;
@@ -109,7 +110,6 @@
     MPUserDynamicTransition *transition = [MPUserDynamicTransition animationWithDuration:duration startView:startView startImage:startImage endX:endX operation:operation];
     if (operation == UINavigationControllerOperationPop) {
         transition.isInteracting = self.isInteracting;
-        transition.isComplete = YES;
     }
     self.transition = transition;
     return transition;

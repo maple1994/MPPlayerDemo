@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MPUserDynamicTransition : NSObject<UIViewControllerAnimatedTransitioning, CAAnimationDelegate>
 /// 是否手势退出
 @property (nonatomic, assign) BOOL isInteracting;
+/// 是否手势完成
 @property (nonatomic, assign) BOOL isComplete;
 /**
  初始化动画
