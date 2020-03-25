@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIView<ZFPlayerMediaControl> *controlView;
 /// 保存player在信息流时，应该显示的scalingMode
 @property (nonatomic, assign) ZFPlayerScalingMode videoFlowScalingMode;
+@property (nonatomic) CGFloat playerDisapperaPercent;
+@property (nonatomic) CGFloat playerApperaPercent;
 @property (nonatomic, getter=isWWANAutoPlay) BOOL WWANAutoPlay;
 @property (nonatomic, assign) BOOL isPlaying;
 
@@ -53,6 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// The block invoked when the player load state changed.
 @property (nonatomic, copy, nullable) void(^playerLoadStateChanged)(id<ZFPlayerMediaPlayback> asset, ZFPlayerLoadState loadState);
 @property (nonatomic, copy, nullable) void(^zf_playerDisappearingInScrollView)(NSIndexPath *indexPath, CGFloat playerDisapperaPercent);
+@property (nonatomic, copy, nullable) void(^zf_playerDidDisappearInScrollView)(NSIndexPath *indexPath);
 
 
 // MARK: - Init

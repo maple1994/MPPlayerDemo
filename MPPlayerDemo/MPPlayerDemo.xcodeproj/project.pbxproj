@@ -532,20 +532,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MPPlayerDemo/Pods-MPPlayerDemo-resources.sh",
-				"${PODS_ROOT}/ZFPlayer/ZFPlayer/Classes/ControlView/ZFPlayer.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-MPPlayerDemo/Pods-MPPlayerDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-MPPlayerDemo/Pods-MPPlayerDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MPPlayerDemo/Pods-MPPlayerDemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MPPlayerDemo/Pods-MPPlayerDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE76C03EE5036F61BA587839 /* [CP] Check Pods Manifest.lock */ = {

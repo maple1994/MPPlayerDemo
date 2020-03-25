@@ -35,7 +35,6 @@
     {
         MPlayerAttributeManager *mgr = [[MPlayerAttributeManager alloc] init];
         _player = [[ZFPlayerController alloc] initWithPlayerManager:mgr containerView:containerView];
-        _player.playerDisapperaPercent = 1.0;
         [_player setCustomAudioSession:YES];
         [self setup];
     }
@@ -54,7 +53,6 @@
         MPlayerAttributeManager *mgr = [[MPlayerAttributeManager alloc] init];
         _player = [[ZFPlayerController alloc] initWithScrollView:scrollView playerManager:mgr containerViewTag:containerViewTag];
         _player.disableGestureTypes = ZFPlayerDisableGestureTypesPan;
-        _player.playerDisapperaPercent = 1.0;
         [_player setCustomAudioSession:YES];
         [self setup];
     }
@@ -373,6 +371,16 @@
     return _player.playerPlayTimeChanged;
 }
 
+- (CGFloat)playerApperaPercent
+{
+    return _player.playerApperaPercent;
+}
+
+- (CGFloat)playerDisapperaPercent
+{
+    return _player.playerDisapperaPercent;
+}
+
 
 // MARK: - Setter
 - (void)setPlayableArray:(NSArray<id<XSTPlayable>> *)playableArray
@@ -459,6 +467,21 @@
 - (void)setZf_playerDisappearingInScrollView:(void (^)(NSIndexPath * _Nonnull, CGFloat))zf_playerDisappearingInScrollView
 {
     _player.zf_playerDisappearingInScrollView = zf_playerDisappearingInScrollView;
+}
+
+- (void)setZf_playerDidDisappearInScrollView:(void (^)(NSIndexPath * _Nonnull))zf_playerDidDisappearInScrollView
+{
+    _player.zf_playerDidDisappearInScrollView = zf_playerDidDisappearInScrollView;
+}
+
+- (void)setPlayerApperaPercent:(CGFloat)playerApperaPercent
+{
+    _player.playerApperaPercent = playerApperaPercent;
+}
+
+- (void)setPlayerDisapperaPercent:(CGFloat)playerDisapperaPercent
+{
+    _player.playerDisapperaPercent = playerDisapperaPercent;
 }
 
 @end

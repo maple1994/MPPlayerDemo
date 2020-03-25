@@ -50,10 +50,11 @@ static NSString *kIdentifier = @"kIdentifier";
     self.player = [MPPlayerController playerWithScrollView:self.tableView containerViewTag:100];
     self.controlView = [[ZFPlayerControlView alloc] init];
     self.player.controlView = self.controlView;
+    [self setupPlayerDisappearBlock];
     
     /// 停止的时候找出最合适的播放(只能找到设置了tag值cell)
     @weakify(self)
-    _tableView.zf_scrollViewDidStopScrollCallback = ^(NSIndexPath * _Nonnull indexPath) {
+    _tableView.zf_scrollViewDidEndScrollingCallback = ^(NSIndexPath * _Nonnull indexPath) {
         @strongify(self)
         if (!self.player.playingIndexPath) {
             [self playTheVideoAtIndexPath:indexPath scrollToTop:NO];
@@ -74,6 +75,19 @@ static NSString *kIdentifier = @"kIdentifier";
         }];
     }
     
+}
+
+- (void)setupPlayerDisappearBlock
+{
+    @weakify(self)
+    self.player.zf_playerDisappearingInScrollView = ^(NSIndexPath * _Nonnull indexPath, CGFloat playerDisapperaPercent) {
+        @strongify(self)
+        // 超出需要播放的百分比时，马上记录播放时间，方便下次seek
+        if (playerDisapperaPercent >= self.player.playerDisapperaPercent) {
+            ZFTableData *data = self.playableArray[indexPath.row];
+            data.current_time = self.player.currentPlayerManager.currentTime;
+        }
+    };
 }
 
 - (void)requestData {
@@ -99,6 +113,8 @@ static NSString *kIdentifier = @"kIdentifier";
     NSInteger index = indexPath.row;
     ZFTableViewCellLayout *layout = self.dataSource[index];
     [self.player playTheIndexPath:indexPath playable:self.playableArray[index]];
+    // seek播放记录
+    self.player.currentPlayerManager.seekTime = layout.data.current_time;
     [self.controlView showTitle:layout.data.title
                  coverURLString:layout.data.thumbnail_url
                  fullScreenMode:layout.isVerticalVideo?ZFFullScreenModePortrait:ZFFullScreenModeLandscape];

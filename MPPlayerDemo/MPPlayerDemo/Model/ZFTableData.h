@@ -11,6 +11,8 @@
 #import <UIKit/UIKit.h> 
 
 @interface ZFTableData : NSObject<XSTPlayable>
+/// 记录播放进度
+@property (nonatomic, assign) NSTimeInterval current_time;
 @property (nonatomic, copy) NSString *nick_name;
 @property (nonatomic, copy) NSString *head;
 @property (nonatomic, assign) NSInteger agree_num;
